@@ -98,7 +98,8 @@ int BinarySearchTree<T>::getHeight(TreeNode<T>* tNode)
 	else {
 		height = rightHeight + 1;
 	}
-
+	
+	return height;
 }
 
 template < class T >
