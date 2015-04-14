@@ -81,24 +81,21 @@ int BinarySearchTree<T>::getHeight(TreeNode<T>* tNode)
     //DO THIS
    	int height = 0;
    
-	if (sze == 0) { //base case
+	if (tNode == NULL) { //base case
 		return height;
 	}
-	
-	if (tNode -> getLeft()) {
-		int leftHeight = getHeight(tNode -> getLeft());
-	}
-	if (tNode -> getRight()) {
-		int rightHeight = getHeight(tNode -> getRight());
-	}
-	
-	if (leftHeight > rightHeight) {
-		height = leftHeight + 1;
-	}
 	else {
-		height = rightHeight + 1;
+		int leftHeight = getHeight(tNode -> getLeft());
+		int rightHeight = getHeight(tNode -> getRight());
+		
+		if (leftHeight > rightHeight) {
+			height = leftHeight + 1;
+		}
+		else {
+			height = rightHeight + 1;
+		}
 	}
-	
+
 	return height;
 }
 
