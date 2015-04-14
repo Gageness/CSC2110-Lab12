@@ -68,16 +68,36 @@ class BinarySearchTree : public Drawable
 template < class T >
 int BinarySearchTree<T>::getHeight()
 {
-   //DO THIS
-
+	//DO THIS
+	TreeNode<T>* tNode = root;
+	int height = getHeight(tNode);
+	
+	return height;
 }
 
 template < class T >
 int BinarySearchTree<T>::getHeight(TreeNode<T>* tNode)
 {
-   //DO THIS
-
-
+    //DO THIS
+   	int height = 0;
+   
+	if (sze == 0) { //base case
+		return height;
+	}
+	
+	if (tNode -> getLeft()) {
+		int leftHeight = getHeight(tNode -> getLeft());
+	}
+	if (tNode -> getRight()) {
+		int rightHeight = getHeight(tNode -> getRight());
+	}
+	
+	if (leftHeight > rightHeight) {
+		height = leftHeight + 1;
+	}
+	else {
+		height = rightHeight + 1;
+	}
 
 }
 
