@@ -145,7 +145,7 @@ template < class T >
 void BinarySearchTree<T>::minimize(T** items, int first, int last)
 {
     //DO THIS (recursive minimize method)
-	int mid = ((first + last) / 2)
+	int mid = ((first + last) / 2);
 	if (first < last) {
 	
 		insert(items[mid]);
@@ -204,8 +204,8 @@ void BinarySearchTree<T>::minimizeComplete(T** items, int first, int last)
       {
          //initial log computations using mid
          double k_left = log(mid - first + 1) * log_factor; //log base 2 of the number of items to the left of mid (including mid)
-         double int_k_left = (int) (k_left) //same as above but rounded
-         double k_right = log(last, mid - 1) * log_factor;
+         double int_k_left = (int) (k_left); //same as above but rounded
+         double k_right = log(last - mid - 1) * log_factor;
          double int_k_right = (int) (k_right);
 
          //keep searching for spot where the number of elements to the left of mid is 2^k - 1 (a full tree)
@@ -219,8 +219,8 @@ void BinarySearchTree<T>::minimizeComplete(T** items, int first, int last)
             //DO THIS
             //try again with mid shifted one to the right
 			k_left = log(mid - first + 1) * log_factor;
-			int_k_left = (int) (k_left + 0.5)
-			k_right = log(last, mid + 1) * log_factor;
+			int_k_left = (int) (k_left + 0.5);
+			k_right = log(last - mid + 1) * log_factor;
 			int_k_right = (int) (k_right + 0.5);
          }
       }
@@ -234,7 +234,7 @@ void BinarySearchTree<T>::minimizeComplete(T** items, int first, int last)
 	  minimizeComplete(items, first, mid - 1);
 	  minimizeComplete(items, mid + 1, last);
 
-   }+999
+   }
 }
 
 template < class T >
