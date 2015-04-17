@@ -103,10 +103,7 @@ template < class T >
 bool BinarySearchTree<T>::isBalanced()
 {
    //DO THIS
-   TreeNode<T>* tNode = root;
-   bool balanced = isBalance(tNode);
-   
-   return balanced;
+   return isBalanced(root);
 }
 
 template < class T >
@@ -118,8 +115,8 @@ bool BinarySearchTree<T>::isBalanced(TreeNode<T>* tNode)
 	}
 	else {
 	
-		int leftHeight = isBalanced(tNode -> left);
-		int rightHeight = isBalance(tNode -> right);
+		int leftHeight = isBalanced(tNode -> getLeft());
+		int rightHeight = isBalanced(tNode -> getRight());
 		
 		if (abs(leftHeight - rightHeight) <= 1 || abs(rightHeight - leftHeight) <= 1) {
 			return false;
